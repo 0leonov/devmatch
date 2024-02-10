@@ -1,15 +1,18 @@
 import Link from "next/link";
 import React from "react";
 
+import { auth } from "@/entities/auth";
 import { ThemeToggle } from "@/features/theming";
 import { DevMatchLogo, GitHubLogo } from "@/shared/components/icons";
 import { buttonVariants } from "@/shared/components/ui/button";
 import { routes } from "@/shared/lib/routes";
 
-export default function PublicHeader() {
+export async function PublicHeader() {
+  const session = await auth();
+
   return (
     <header className="container flex items-center justify-between py-8">
-      <Link href={routes.welcome}>
+      <Link href={session ? routes.home : routes.welcome}>
         <DevMatchLogo className="h-10 w-10" />
       </Link>
 

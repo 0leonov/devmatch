@@ -1,5 +1,6 @@
 export const routes = {
-  welcome: "/",
+  home: "/",
+  welcome: "/welcome",
   login: "/login",
   profile: "/profile",
   settings: "/settings",
@@ -7,4 +8,6 @@ export const routes = {
   notifications: "/notifications",
   search: "/search",
   post: "/post",
+  about: "/about",
+  terms: "/terms",
 };
