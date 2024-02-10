@@ -1,17 +1,14 @@
 import "@/shared/styles/globals.css";
 
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Inter } from "next/font/google";
 import React from "react";
 
 import { cn } from "@/shared/lib/utils";
 
-import { SessionProvider, ThemeProvider } from "./providers";
+import { SessionProvider, ThemeProvider } from "../providers";
 
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "DevMatch",
@@ -25,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("font-sans antialiased", fontSans.variable)}>
+      <body className={cn("antialiased", inter.className)}>
         <ThemeProvider>
           <SessionProvider>{children}</SessionProvider>
         </ThemeProvider>

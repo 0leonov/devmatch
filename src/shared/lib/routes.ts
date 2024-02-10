@@ -10,4 +10,5 @@ export const routes = {
   post: "/post",
   about: "/about",
   terms: "/terms",
+  completeRegistration: "/complete-registration",
 };
