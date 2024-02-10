@@ -6,7 +6,7 @@ import React from "react";
 
 import { cn } from "@/shared/lib/utils";
 
-import { ThemeProvider } from "./providers";
+import { SessionProvider, ThemeProvider } from "./providers";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -26,7 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("font-sans antialiased", fontSans.variable)}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <SessionProvider>{children}</SessionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
